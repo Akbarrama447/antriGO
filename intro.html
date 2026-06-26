@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntriGo — Digital Restaurant Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/intro.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fa-solid fa-table-cells-large"></i>
+                <span>AntriGo</span>
+            </div>
+            <div class="nav-links">
+                <a href="#how-it-works">Cara Kerja</a>
+                <a href="#menu">Menu</a>
+                <a href="#features">Fitur</a>
+                <a href="#contact">Kontak</a>
+                <a href="index.html?ref=business" class="nav-cta">For Business</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop" alt="Restaurant ambiance" class="hero-img">
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge-wrapper">
+                <span class="hero-badge">
+                    <i class="fa-solid fa-qrcode"></i>
+                    QR Code Digital Menu
+                </span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Scan. Browse.</span>
+                <span class="title-line accent">Order. Dine.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Nikmati pengalaman fine dining modern — cukup scan QR code di meja Anda, 
+                jelajahi menu lengkap dengan foto, dan pesan langsung dari smartphone.
+            </p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn-primary">
+                    Lihat Menu <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#how-it-works" class="btn-secondary">
+                    <i class="fa-solid fa-play-circle"></i> Cara Kerja
+                </a>
+            </div>
+            <div class="hero-stats-row">
+                <div class="hero-stat-item">
+                    <span class="hsi-number">150+</span>
+                    <span class="hsi-label">Menu Items</span>
+                </div>
+                <div class="hero-stat-item">
+                    <span class="hsi-number">10K+</span>
+                    <span class="hsi-label">Happy Customers</span>
+                </div>
+                <div class="hero-stat-item">
+                    <span class="hsi-number">4.9</span>
+                    <span class="hsi-label">Rating</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll untuk jelajahi</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Cara Kerja</span>
+                <h2>Nikmati Hidangan dalam 4 Langkah Mudah</h2>
+                <p>Dari scan QR code hingga pesanan sampai ke meja Anda — semudah itu.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon-box">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <h3>Scan QR Code</h3>
+                    <p>Scan QR code yang tersedia di meja Anda menggunakan kamera smartphone.</p>
+                </div>
+                <div class="step-connector">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon-box">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3>Jelajahi Menu</h3>
+                    <p>Lihat menu lengkap dengan foto, deskripsi, dan harga real-time.</p>
+                </div>
+                <div class="step-connector">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon-box">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <h3>Pesan & Bayar</h3>
+                    <p>Tambahkan pesanan dan lakukan pembayaran langsung dari ponsel Anda.</p>
+                </div>
+                <div class="step-connector">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <div class="step-icon-box">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <h3>Nikmati Hidangan</h3>
+                    <p>Duduk santai dan tunggu pesanan diantar langsung ke meja Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MENU PREVIEW ===== -->
+    <section id="menu" class="section menu-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Menu Pilihan</span>
+                <h2>Signature Menu Kami</h2>
+                <p>Beragam pilihan hidangan dan minuman spesial yang siap memanjakan lidah Anda.</p>
+            </div>
+
+            <!-- Menu Category Tabs -->
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-category="all">Semua</button>
+                <button class="menu-tab" data-category="makanan">Makanan</button>
+                <button class="menu-tab" data-category="minuman">Minuman</button>
+                <button class="menu-tab" data-category="dessert">Dessert</button>
+            </div>
+
+            <div class="menu-grid" id="menuGrid">
+                <!-- Makanan -->
+                <div class="menu-card" data-category="makanan">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=400&auto=format&fit=crop" alt="Margherita Pizza">
+                        <span class="menu-badge">Popular</span>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Margherita Pizza</h3>
+                        <p>Pizza klasik dengan mozzarella segar, basil, dan tomat San Marzano.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 85.000</span>
+                            <button class="btn-order" data-name="Margherita Pizza" data-price="85000">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="makanan">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=400&auto=format&fit=crop" alt="Beef Burger">
+                        <span class="menu-badge chef">Chef's Pick</span>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Smash Beef Burger</h3>
+                        <p>Beef patty double dengan smoked cheddar, caramelized onion, dan saus spesial.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 95.000</span>
+                            <button class="btn-order" data-name="Smash Beef Burger" data-price="95000">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="makanan">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=400&auto=format&fit=crop" alt="Caesar Salad">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Caesar Salad</h3>
+                        <p>Romaine lettuce segar dengan parmesan, croutons, dan dressing caesar homemade.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 65.000</span>
+                            <button class="btn-order" data-name="Caesar Salad" data-price="65000">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Minuman -->
+                <div class="menu-card" data-category="minuman">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=400&auto=format&fit=crop" alt="Matcha Latte">
+                        <span class="menu-badge">New</span>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Matcha Latte</h3>
+                        <p>Matcha premium Jepang dengan steamed oat milk — creamy dan earthy.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 55.000</span>
+                            <button class="btn-order" data-name="Matcha Latte" data-price="55000">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="minuman">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=400&auto=format&fit=crop" alt="Fresh Juice">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Mixed Berry Smoothie</h3>
+                        <p>Blend stroberi, blueberry, dan yogurt segar — kaya antioksidan.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 45.000</span>
+                            <button class="btn-order" data-name="Mixed Berry Smoothie" data-price="45000">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="minuman">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=400&auto=format&fit=crop" alt="Coffee">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Espresso</h3>
+                        <p>Single origin arabica dari perkebunan Toraja — full body dan low acidity.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 35.000</span>
+                            <button class="btn-order" data-name="Espresso" data-price="35000">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert -->
+                <div class="menu-card" data-category="dessert">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=400&auto=format&fit=crop" alt="Tiramisu">
+                        <span class="menu-badge chef">Chef's Pick</span>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Tiramisu</h3>
+                        <p>Tiramisu klasik Italia dengan mascarpone dan espresso — melts in your mouth.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 55.000</span>
+                            <button class="btn-order" data-name="Tiramisu" data-price="55000">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="dessert">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=400&auto=format&fit=crop" alt="Chocolate Cake">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Chocolate Lava Cake</h3>
+                        <p>Dark chocolate cake dengan molten center — disajikan dengan vanilla ice cream.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 60.000</span>
+                            <button class="btn-order" data-name="Chocolate Lava Cake" data-price="60000">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="dessert">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=400&auto=format&fit=crop" alt="Panna Cotta">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Panna Cotta</h3>
+                        <p>Italian cream dessert dengan strawberry coulis dan fresh mint.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 50.000</span>
+                            <button class="btn-order" data-name="Panna Cotta" data-price="50000">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-cta-wrapper">
+                <a href="#" class="btn-primary btn-outline">
+                    Lihat Menu Lengkap <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== QR CODE SECTION ===== -->
+    <section id="features" class="section qr-section">
+        <div class="container">
+            <div class="qr-content">
+                <div class="qr-left">
+                    <span class="section-badge light">QR Code Access</span>
+                    <h2>Akses Menu dengan<br>Sekali Scan</h2>
+                    <p>Cukup scan QR code yang tersedia di setiap meja restoran. Tidak perlu download aplikasi — langsung buka di browser dan nikmati menu digital lengkap.</p>
+                    <div class="qr-benefits">
+                        <div class="qr-benefit">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>No app download required</span>
+                        </div>
+                        <div class="qr-benefit">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Menu real-time dengan foto</span>
+                        </div>
+                        <div class="qr-benefit">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Pemesanan dari meja Anda</span>
+                        </div>
+                        <div class="qr-benefit">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Pembayaran digital aman</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="qr-right">
+                    <div class="qr-mockup">
+                        <div class="qr-phone-frame">
+                            <div class="phone-notch"></div>
+                            <div class="qr-display">
+                                <div class="qr-code-visual">
+                                    <div class="qr-pattern">
+                                        <i class="fa-solid fa-qrcode"></i>
+                                    </div>
+                                </div>
+                                <p class="qr-scan-text">Scan to view menu</p>
+                                <div class="qr-scan-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section id="features-alt" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Fitur Unggulan</span>
+                <h2>Mengapa AntriGo?</h2>
+                <p>Solusi digital restaurant management yang lengkap untuk restoran modern.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-circle">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <h3>QR Code Access</h3>
+                    <p>Setiap meja memiliki QR code unik. Pelanggan scan dan langsung akses menu tanpa antri.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-circle">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+                    <h3>Data & Analytics</h3>
+                    <p>Pantau data pelanggan, menu favorit, jam sibuk, dan tren penjualan secara real-time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-circle">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h3>Digital Payment</h3>
+                    <p>Terima pembayaran digital dari berbagai metode — QRIS, kartu, dan e-wallet.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-circle">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <h3>Real-time Notification</h3>
+                    <p>Notifikasi instan ke dapur saat pesanan masuk — kurangi waiting time hingga 40%.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-circle">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3>Customer Management</h3>
+                    <p>Database pelanggan otomatis — riwayat pesanan, preferensi, dan loyalty program.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-circle">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>Secure & Reliable</h3>
+                    <p>Enkripsi data end-to-end dengan 99.9% uptime guarantee untuk bisnis Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIAL ===== -->
+    <section class="section testimonial-section">
+        <div class="container">
+            <div class="testimonial-card-large">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p class="testimonial-text">"Sejak pindah ke AntriGo, waktu tunggu pelanggan turun 40% dan repeat customer naik 25%. QR code system-nya bikin pelanggan betah — nggak perlu nunggu waiter buat pesan."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="Rudi Hartono" class="test-avatar">
+                    <div>
+                        <strong>Rudi Hartono</strong>
+                        <span>Owner — Warung Kito Restaurant</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Mulai Transformasi Digital<br>Restoran Anda</h2>
+                <p>Bergabung dengan 10,000+ restoran yang sudah menggunakan AntriGo untuk mengelola menu, pesanan, dan pelanggan.</p>
+                <div class="cta-actions">
+                    <a href="index.html" class="btn-primary btn-large">
+                        Daftar Bisnis Gratis <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="btn-secondary btn-large">
+                        <i class="fa-solid fa-phone"></i> Hubungi Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-brand">
+                        <i class="fa-solid fa-table-cells-large"></i>
+                        <span>AntriGo</span>
+                    </div>
+                    <p>Platform digital restaurant management nomor 1 di Indonesia. Permudah operasional restoran Anda dengan QR code menu, analitik data, dan manajemen pelanggan.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="#">Digital Menu</a>
+                    <a href="#">QR Code System</a>
+                    <a href="#">Analytics</a>
+                    <a href="#">Payment</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AntriGo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/intro.js"></script>
+</body>
+</html>

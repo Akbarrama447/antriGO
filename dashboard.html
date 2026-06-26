@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntriGo — Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <i class="fa-solid fa-table-cells-large"></i>
+            <span>AntriGo</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-section="overview">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item" data-section="menu">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Menu</span>
+            </a>
+            <a href="#" class="nav-item" data-section="customers">
+                <i class="fa-solid fa-users"></i>
+                <span>Pelanggan</span>
+            </a>
+            <a href="#" class="nav-item" data-section="transactions">
+                <i class="fa-solid fa-receipt"></i>
+                <span>Transaksi</span>
+            </a>
+            <a href="#" class="nav-item" data-section="finance">
+                <i class="fa-solid fa-coins"></i>
+                <span>Keuangan</span>
+            </a>
+            <a href="#" class="nav-item" data-section="qr">
+                <i class="fa-solid fa-qrcode"></i>
+                <span>QR Code</span>
+            </a>
+            <a href="#" class="nav-item" data-section="settings">
+                <i class="fa-solid fa-gear"></i>
+                <span>Pengaturan</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="intro.html" class="nav-item">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Kembali ke Site</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+
+        <!-- ===== TOP BAR ===== -->
+        <header class="topbar">
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="topbar-search">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" placeholder="Cari menu, pelanggan, transaksi..." id="globalSearch">
+            </div>
+            <div class="topbar-right">
+                <button class="topbar-icon" id="notifBtn">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notif-dot"></span>
+                </button>
+                <div class="topbar-user">
+                    <div class="user-avatar">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop" alt="Admin">
+                    </div>
+                    <div class="user-info">
+                        <strong>Warung Kito</strong>
+                        <span>Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ===== SECTION: OVERVIEW ===== -->
+        <section class="content-section active" id="section-overview">
+            <div class="section-title">
+                <h1>Dashboard</h1>
+                <p>Ringkasan bisnis restoran Anda hari ini.</p>
+            </div>
+
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-icon revenue">
+                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Pendapatan</span>
+                        <span class="stat-value" id="statRevenue">Rp 0</span>
+                        <span class="stat-change positive" id="statRevenueChange">+0%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orders">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Pesanan Hari Ini</span>
+                        <span class="stat-value" id="statOrders">0</span>
+                        <span class="stat-change positive" id="statOrdersChange">+0%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon customers">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Pelanggan</span>
+                        <span class="stat-value" id="statCustomers">0</span>
+                        <span class="stat-change positive" id="statCustomersChange">+0%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon tables">
+                        <i class="fa-solid fa-table"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Meja Aktif</span>
+                        <span class="stat-value" id="statTables">0/<span id="statTotalTables">0</span></span>
+                        <span class="stat-change" id="statTablesStatus">○ Semua tersedia</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Pesanan Terbaru</h3>
+                        <a href="#" class="card-action" data-nav="transactions">Lihat Semua</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-wrapper">
+                            <table class="table" id="recentOrdersTable">
+                                <thead>
+                                    <tr>
+                                        <th>Pelanggan</th>
+                                        <th>Menu</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentOrdersBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Menu Terpopuler</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="popular-list" id="popularList"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: MENU ===== -->
+        <section class="content-section" id="section-menu">
+            <div class="section-title">
+                <h1>Manajemen Menu</h1>
+                <p>Kelola menu makanan dan minuman restoran Anda.</p>
+            </div>
+
+            <div class="toolbar">
+                <div class="toolbar-left">
+                    <button class="btn btn-primary" id="btnAddMenu">
+                        <i class="fa-solid fa-plus"></i> Tambah Menu
+                    </button>
+                    <div class="toolbar-tabs">
+                        <button class="toolbar-tab active" data-filter="all">Semua</button>
+                        <button class="toolbar-tab" data-filter="Makanan">Makanan</button>
+                        <button class="toolbar-tab" data-filter="Minuman">Minuman</button>
+                        <button class="toolbar-tab" data-filter="Dessert">Dessert</button>
+                    </div>
+                </div>
+                <div class="toolbar-right">
+                    <input type="text" class="search-input" placeholder="Cari menu..." id="searchMenu">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body p-0">
+                    <div class="table-wrapper">
+                        <table class="table" id="menuTable">
+                            <thead>
+                                <tr>
+                                    <th>Menu</th>
+                                    <th>Kategori</th>
+                                    <th>Harga</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="menuTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: CUSTOMERS ===== -->
+        <section class="content-section" id="section-customers">
+            <div class="section-title">
+                <h1>Data Pelanggan</h1>
+                <p>Informasi dan riwayat pelanggan restoran.</p>
+            </div>
+
+            <div class="toolbar">
+                <div class="toolbar-right" style="width:100%;max-width:400px">
+                    <input type="text" class="search-input" placeholder="Cari pelanggan..." id="searchCustomer">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body p-0">
+                    <div class="table-wrapper">
+                        <table class="table" id="customerTable">
+                            <thead>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                    <th>No. Telepon</th>
+                                    <th>Total Pesanan</th>
+                                    <th>Terakhir</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customerTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: TRANSACTIONS ===== -->
+        <section class="content-section" id="section-transactions">
+            <div class="section-title">
+                <h1>Transaksi</h1>
+                <p>Riwayat pesanan dan pembayaran.</p>
+            </div>
+
+            <div class="toolbar">
+                <div class="toolbar-left">
+                    <div class="toolbar-tabs">
+                        <button class="toolbar-tab active" data-filter="all">Semua</button>
+                        <button class="toolbar-tab" data-filter="completed">Selesai</button>
+                        <button class="toolbar-tab" data-filter="pending">Pending</button>
+                        <button class="toolbar-tab" data-filter="cancelled">Batal</button>
+                    </div>
+                </div>
+                <div class="toolbar-right">
+                    <input type="text" class="search-input" placeholder="Cari transaksi..." id="searchTransaction">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body p-0">
+                    <div class="table-wrapper">
+                        <table class="table" id="transactionTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Pelanggan</th>
+                                    <th>Menu</th>
+                                    <th>Total</th>
+                                    <th>Tanggal</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transactionTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: FINANCE ===== -->
+        <section class="content-section" id="section-finance">
+            <div class="section-title">
+                <h1>Keuangan</h1>
+                <p>Laporan pendapatan, pengeluaran, dan laba bisnis Anda.</p>
+            </div>
+
+            <div class="toolbar">
+                <div class="toolbar-left">
+                    <div class="toolbar-tabs">
+                        <button class="toolbar-tab active" data-period="today">Hari Ini</button>
+                        <button class="toolbar-tab" data-period="week">Minggu Ini</button>
+                        <button class="toolbar-tab" data-period="month">Bulan Ini</button>
+                        <button class="toolbar-tab" data-period="year">Tahun Ini</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="finance-stats-grid" id="financeStatsGrid">
+                <div class="stat-card finance-card">
+                    <div class="stat-icon income">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Pendapatan</span>
+                        <span class="stat-value" id="financeRevenue">Rp 0</span>
+                        <span class="stat-change positive" id="financeRevenueChange">+0%</span>
+                    </div>
+                </div>
+                <div class="stat-card finance-card">
+                    <div class="stat-icon expense">
+                        <i class="fa-solid fa-arrow-trend-down"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Pengeluaran</span>
+                        <span class="stat-value" id="financeExpense">Rp 0</span>
+                        <span class="stat-change negative" id="financeExpenseChange">-0%</span>
+                    </div>
+                </div>
+                <div class="stat-card finance-card">
+                    <div class="stat-icon profit">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Laba Bersih</span>
+                        <span class="stat-value" id="financeProfit">Rp 0</span>
+                        <span class="stat-change positive" id="financeProfitChange">+0%</span>
+                    </div>
+                </div>
+                <div class="stat-card finance-card">
+                    <div class="stat-icon avg">
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Rata-rata Transaksi</span>
+                        <span class="stat-value" id="financeAvg">Rp 0</span>
+                        <span class="stat-change" id="financeAvgChange">Per transaksi</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="finance-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Grafik Pendapatan</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container" id="revenueChart"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Rincian Pengeluaran</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="expense-list" id="expenseList"></div>
+                        <div class="expense-total">
+                            <span>Total Pengeluaran</span>
+                            <strong id="expenseTotalAmount">Rp 0</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Riwayat Keuangan</h3>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-wrapper">
+                        <table class="table" id="financeTable">
+                            <thead>
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Kategori</th>
+                                    <th>Deskripsi</th>
+                                    <th>Jenis</th>
+                                    <th>Jumlah</th>
+                                </tr>
+                            </thead>
+                            <tbody id="financeTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: QR CODE ===== -->
+        <section class="content-section" id="section-qr">
+            <div class="section-title">
+                <h1>QR Code Management</h1>
+                <p>Kelola QR code untuk setiap meja restoran.</p>
+            </div>
+
+            <!-- CCTV Info Banner -->
+            <div class="cctv-banner">
+                <div class="cctv-banner-icon">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+                <div class="cctv-banner-text">
+                    <strong>Terintegrasi dengan Computer Vision CCTV</strong>
+                    <p>Status kursi terdeteksi secara otomatis melalui kamera CCTV. Admin tidak perlu melakukan input manual untuk menandai kursi kosong atau terisi.</p>
+                </div>
+                <span class="cctv-badge">Otomatis</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Daftar Meja</h3>
+                    <button class="btn btn-primary" id="btnAddTable">
+                        <i class="fa-solid fa-plus"></i> Tambah Meja
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="qr-grid" id="qrGrid"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: SETTINGS ===== -->
+        <section class="content-section" id="section-settings">
+            <div class="section-title">
+                <h1>Pengaturan</h1>
+                <p>Kelola profil dan preferensi restoran Anda.</p>
+            </div>
+
+            <div class="settings-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Profil Restoran</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="settingsForm">
+                            <div class="form-group">
+                                <label>Nama Restoran</label>
+                                <input type="text" class="form-input" id="restaurantName" value="Warung Kito">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-input" id="restaurantEmail" value="admin@warungkito.com">
+                            </div>
+                            <div class="form-group">
+                                <label>No. Telepon</label>
+                                <input type="tel" class="form-input" id="restaurantPhone" value="+62 812-3456-7890">
+                            </div>
+                            <div class="form-group">
+                                <label>Alamat</label>
+                                <textarea class="form-input" id="restaurantAddress" rows="3">Jl. Makan Enak No. 123, Jakarta</textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Preferensi</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="pref-item">
+                            <div>
+                                <strong>Mata Uang</strong>
+                                <p>Format harga yang digunakan di menu</p>
+                            </div>
+                            <select class="form-input" style="width:auto">
+                                <option>IDR (Rp)</option>
+                                <option>USD ($)</option>
+                            </select>
+                        </div>
+                        <div class="pref-item">
+                            <div>
+                                <strong>Bahasa</strong>
+                                <p>Bahasa tampilan dashboard</p>
+                            </div>
+                            <select class="form-input" style="width:auto">
+                                <option>Bahasa Indonesia</option>
+                                <option>English</option>
+                            </select>
+                        </div>
+                        <div class="pref-item">
+                            <div>
+                                <strong>Notifikasi</strong>
+                                <p>Terima notifikasi untuk pesanan baru</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== MODAL ===== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Tambah Menu</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <form id="menuForm">
+                    <div class="form-group">
+                        <label>Nama Menu</label>
+                        <input type="text" class="form-input" id="menuName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Kategori</label>
+                        <select class="form-input" id="menuCategory">
+                            <option>Makanan</option>
+                            <option>Minuman</option>
+                            <option>Dessert</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Harga (Rp)</label>
+                        <input type="number" class="form-input" id="menuPrice" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Deskripsi</label>
+                        <textarea class="form-input" id="menuDesc" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="toggle-label">
+                            <span>Tersedia</span>
+                            <label class="toggle">
+                                <input type="checkbox" id="menuAvailable" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modalCancel">Batal</button>
+                <button class="btn btn-primary" id="modalSave">Simpan</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

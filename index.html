@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntriGo - Create Business Account</title>
+    <script>
+        if (!window.location.search.includes('ref=business')) {
+            window.location.replace('intro.html');
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== HERO / LANDING SECTION ===== -->
+    <section id="hero">
+        <nav class="hero-nav">
+            <div class="brand">
+                <i class="fa-solid fa-table-cells-large brand-icon"></i>
+                <span class="brand-name">AntriGo</span>
+            </div>
+        </nav>
+        <div class="hero-body">
+            <div class="hero-text">
+                <div class="hero-badge">#1 Queue Management Platform</div>
+                <h1>Revolutionize Your Queue<br>and Menu Management</h1>
+                <p>AntriGo helps 10,000+ businesses streamline operations, reduce wait times, and boost customer satisfaction with AI-powered queue and menu systems.</p>
+                <button class="btn-hero" id="btnGetStarted">
+                    Get Started <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-number">10,000+</span>
+                    <span class="stat-label">Businesses Trust Us</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">Uptime SLA</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">24%</span>
+                    <span class="stat-label">Avg. Throughput Gain</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll to learn more</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ===== REGISTRATION SECTION ===== -->
+    <div class="container" id="register-section">
+        <div class="left-side">
+            <div class="brand">
+                <i class="fa-solid fa-table-cells-large brand-icon"></i>
+                <span class="brand-name">AntriGo</span>
+            </div>
+            
+            <h1 class="main-title">Scale your enterprise with precision.</h1>
+            <p class="main-desc">Join 10,000+ businesses optimizing their operational efficiency with our intelligent queue and menu management systems.</p>
+
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon-box">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <div>
+                        <h3>99.9% Uptime SLA</h3>
+                        <p>Reliable infrastructure designed for mission-critical enterprise operations.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h3>Bank-Grade Security</h3>
+                        <p>AES-256 encryption and SOC2 Type II compliance standards.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-box">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h3>Real-time Analytics</h3>
+                        <p>Deep-dive into customer behavior and operational bottlenecks instantly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100&auto=format&fit=crop" alt="Sarah Chen" class="avatar">
+                <div>
+                    <p class="quote">"AntriGo transformed our guest management. Throughput increased by 24% within the first month."</p>
+                    <p class="author">— Sarah Chen, <span class="role">Operations Director at GlobalEats</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="form-card">
+                <div class="form-header">
+                    <h2>Create Business Account</h2>
+                    <p>Tell us about your company to get started.</p>
+                </div>
+
+                <form id="registerForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="businessName">BUSINESS NAME</label>
+                            <input type="text" id="businessName" placeholder="e.g. Acme Corp" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="workEmail">WORK EMAIL</label>
+                            <input type="email" id="workEmail" placeholder="name@company.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">PHONE NUMBER</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-phone phone-icon"></i>
+                            <input type="tel" id="phone" placeholder="+1 (555) 000-0000" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">PASSWORD</label>
+                            <input type="password" id="password" placeholder="••••••••" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">HEADQUARTERS ADDRESS</label>
+                            <input type="text" id="address" placeholder="123 Business Way" required>
+                        </div>
+                    </div>
+
+                    <div class="subscription-section">
+                        <label class="section-label">SELECT SUBSCRIPTION PLAN</label>
+                        <div class="plans-container">
+                            <div class="plan-card" id="plan-monthly">
+                                <div class="plan-info">
+                                    <span class="plan-title">Monthly</span>
+                                    <div class="plan-price"><strong>$149</strong> <span class="period">/mo</span></div>
+                                    <span class="billing-cycle">Billed per month</span>
+                                </div>
+                                <div class="radio-custom"></div>
+                            </div>
+
+                            <div class="plan-card active" id="plan-annual">
+                                <div class="plan-info">
+                                    <div class="plan-title-row">
+                                        <span class="plan-title">Annual</span>
+                                        <span class="badge">SAVE 20%</span>
+                                    </div>
+                                    <div class="plan-price"><strong>$119</strong> <span class="period">/mo</span></div>
+                                    <span class="billing-cycle">Billed annually ($1,428/yr)</span>
+                                </div>
+                                <div class="radio-custom checked"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Create Business Account</button>
+
+                    <p class="terms">
+                        By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                    </p>
+                </form>
+
+                <div class="form-footer">
+                    Already have an account? <a href="#">Log in</a>
+                </div>
+            </div>
+
+            <div class="footer-icons">
+                <i class="fa-brands fa-stripe"></i>
+                <i class="fa-brands fa-aws"></i>
+                <i class="fa-solid fa-infinity"></i>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
