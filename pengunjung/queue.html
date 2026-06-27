@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntriGo - Order Status</title>
+    <link rel="stylesheet" href="queue.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <button class="back-btn" onclick="location.href='menu.html'">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+            <div class="header-logo">AntriGo</div>
+            <div class="profile-pic">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=36&h=36&fit=crop&crop=face" alt="Profile">
+            </div>
+        </header>
+
+        <div class="status-content" id="statusContent">
+            <div class="status-alert-banner" id="alertBanner">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                <span id="alertText">Your order is now being cooked!</span>
+            </div>
+
+            <div class="order-main-card" id="orderMainCard">
+                <div class="card-upper-row">
+                    <div class="order-id-block">
+                        <h2 class="order-number" id="orderNumber">Order #----</h2>
+                        <p class="order-time" id="orderTime">Ordered today at --:--</p>
+                    </div>
+                    <div class="time-estimate">
+                        <span class="time-range">10-15</span>
+                        <span class="time-unit">mins</span>
+                    </div>
+                </div>
+
+                <div class="stepper-wrapper">
+                    <div class="progress-line">
+                        <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+                    </div>
+                    <div class="steps-container">
+                        <div class="step-node active" data-step="1">
+                            <div class="circle-icon">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                            </div>
+                            <span class="step-label">Received</span>
+                        </div>
+                        <div class="step-node" data-step="2">
+                            <div class="circle-icon">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21h18v-2H2v2zM20 8h-2V5h2v3zm-4-3v3H4v10h16V5h-4z"/></svg>
+                            </div>
+                            <span class="step-label">Preparing</span>
+                        </div>
+                        <div class="step-node" data-step="3">
+                            <div class="circle-icon">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7z"/></svg>
+                            </div>
+                            <span class="step-label">Cooking</span>
+                        </div>
+                        <div class="step-node" data-step="4">
+                            <div class="circle-icon">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+                            </div>
+                            <span class="step-label">Ready</span>
+                        </div>
+                        <div class="step-node" data-step="5">
+                            <div class="circle-icon">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                            </div>
+                            <span class="step-label">Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <div class="details-section">
+                    <h3 class="section-title">Order Details</h3>
+                    <div id="orderItems"></div>
+                </div>
+
+                <div class="total-paid-box">
+                    <span>Total Amount Paid</span>
+                    <span class="total-price" id="totalPrice">Rp0</span>
+                </div>
+            </div>
+
+            <button class="btn-receipt" onclick="viewReceipt()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                <span>View Digital Receipt</span>
+            </button>
+
+            <div class="eco-banner">
+                <div class="eco-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2z"></path>
+                    </svg>
+                </div>
+                <div class="eco-text">
+                    <h4>Eco-Friendly Order</h4>
+                    <p>This order used 100% biodegradable packaging. Thank you for helping the planet!</p>
+                </div>
+            </div>
+
+            <div class="empty-state" id="emptyState" style="display:none">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <p class="empty-text">No active orders</p>
+                <button class="btn-browse" onclick="location.href='menu.html'">Browse Menu</button>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <a href="menu.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                <span>Menu</span>
+            </a>
+            <a href="queue.html" class="nav-item active">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                <span>Queue</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <div class="modal-overlay" id="receiptModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeReceiptModal()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="receipt" id="receiptContent"></div>
+            <button class="btn-done" onclick="closeReceiptModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="queue.js"></script>
+</body>
+</html>

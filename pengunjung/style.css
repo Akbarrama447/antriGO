@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 12px;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 40px;
+    }
+}
+
+.order-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px 24px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 360px) {
+    .order-card {
+        padding: 28px 16px;
+        border-radius: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .order-card {
+        padding: 48px 32px;
+        max-width: 440px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    }
+}
+
+.brand {
+    color: #006837;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 360px) {
+    .brand {
+        font-size: 12px;
+    }
+}
+
+.title {
+    color: #111111;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 36px;
+}
+
+@media (max-width: 360px) {
+    .title {
+        font-size: 22px;
+        margin-bottom: 28px;
+    }
+}
+
+.btn {
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    padding: 18px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    margin-bottom: 16px;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.btn:last-child {
+    margin-bottom: 0;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-dine-in {
+    background-color: #006837;
+    color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 104, 55, 0.15);
+}
+
+.btn-dine-in:hover {
+    background-color: #00522b;
+}
+
+@media (min-width: 768px) {
+    .btn-dine-in:hover {
+        box-shadow: 0 12px 24px rgba(0, 104, 55, 0.25);
+    }
+}
+
+.btn-takeaway {
+    background-color: #ff8c00;
+    color: #ffffff;
+    box-shadow: 0 8px 16px rgba(255, 140, 0, 0.2);
+    padding: 14px 24px;
+}
+
+.btn-takeaway:hover {
+    background-color: #e07b00;
+}
+
+@media (min-width: 768px) {
+    .btn-takeaway:hover {
+        box-shadow: 0 12px 24px rgba(255, 140, 0, 0.3);
+    }
+}
+
+.btn-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.sub-text {
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 2px;
+    letter-spacing: 0.3px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 360px) {
+    .btn {
+        padding: 14px 18px;
+        font-size: 16px;
+        border-radius: 14px;
+    }
+
+    .btn-takeaway {
+        padding: 12px 18px;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+}

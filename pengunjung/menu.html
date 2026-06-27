@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntriGo - Menu</title>
+    <link rel="stylesheet" href="menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-left">
+                <svg class="logo-fork" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+                </svg>
+                <span class="brand-name">AntriGo</span>
+            </div>
+            <div class="header-right">
+                <button class="icon-btn search-trigger">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <div class="profile-avatar">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=36&h=36&fit=crop&crop=face" alt="Profile">
+                </div>
+            </div>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" placeholder="Search for dishes, drinks...">
+            </div>
+        </div>
+
+        <div class="category-tabs">
+            <button class="tab active">All</button>
+            <button class="tab">Mains</button>
+            <button class="tab">Sides</button>
+            <button class="tab">Drinks</button>
+        </div>
+
+        <div class="menu-content">
+            
+            <section class="menu-section">
+                <h2 class="section-title"><span class="star-icon">★</span> Popular Choices</h2>
+                
+                <div class="card-large">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=350&h=180&fit=crop" alt="Signature Wagyu Burger" class="card-img">
+                    <div class="card-body">
+                        <div class="card-header-row">
+                            <h3 class="item-name">Signature Wagyu Burger</h3>
+                            <span class="item-price">Rp25.000</span>
+                        </div>
+                        <p class="item-desc">Premium wagyu patty, truffle aioli, aged cheddar, and house-made pickles in a...</p>
+                        <button class="btn-add-large" onclick="addToCart('Signature Wagyu Burger', 25000)">+ Add</button>
+                    </div>
+                </div>
+
+                <div class="card-large">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=350&h=180&fit=crop" alt="Grilled Salmon Bowl" class="card-img">
+                    <div class="card-body">
+                        <div class="card-header-row">
+                            <h3 class="item-name">Grilled Salmon Bowl</h3>
+                            <span class="item-price">Rp92.000</span>
+                        </div>
+                        <p class="item-desc">Quinoa, avocado, salmon, lemon-dill dressing.</p>
+                        <button class="btn-add-large" onclick="addToCart('Grilled Salmon Bowl', 92000)">+ Add</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="menu-section">
+                <div class="section-header-link">
+                    <h2 class="section-title">Main Courses</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+
+                <div class="item-row">
+                    <div class="row-info">
+                        <h3 class="item-name">Truffle Mushroom Pasta</h3>
+                        <p class="item-desc">Wild forest mushrooms, creamy truffle sauce, and hand-cut...</p>
+                        <div class="row-meta">
+                            <span class="item-price">Rp95.000</span>
+                            <span class="badge badge-time">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                15 mins
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=80&h=80&fit=crop" alt="Pasta">
+                        <button class="btn-add-circle" onclick="addToCart('Truffle Mushroom Pasta', 95000)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-row">
+                    <div class="row-info">
+                        <h3 class="item-name">Crispy Korean Chicken</h3>
+                        <p class="item-desc">Double-fried chicken glazed in spicy gochujang honey sauce.</p>
+                        <div class="row-meta">
+                            <span class="item-price">Rp43.000</span>
+                            <span class="badge badge-popular">✦ Popular</span>
+                        </div>
+                    </div>
+                    <div class="row-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=80&h=80&fit=crop" alt="Korean Chicken">
+                        <button class="btn-add-circle" onclick="addToCart('Crispy Korean Chicken', 43000)">+</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="menu-section">
+                <h2 class="section-title">Sweet Treats</h2>
+                <div class="grid-two-columns">
+                    <div class="card-small">
+                        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=160&h=110&fit=crop" alt="Lava Cake">
+                        <div class="small-body">
+                            <h3 class="item-name">Lava Cake</h3>
+                            <div class="small-footer">
+                                <span class="item-price">Rp34.000</span>
+                                <button class="btn-add-mini" onclick="addToCart('Lava Cake', 34000)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-small">
+                        <img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=160&h=110&fit=crop" alt="Matcha Macarons">
+                        <div class="small-body">
+                            <h3 class="item-name">Matcha Macarons</h3>
+                            <div class="small-footer">
+                                <span class="item-price">Rp23.000</span>
+                                <button class="btn-add-mini" onclick="addToCart('Matcha Macarons', 23000)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="floating-cart-wrapper">
+            <button class="btn-view-cart">
+                <div class="cart-left">
+                    <span class="cart-badge">0</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span class="cart-text">View Cart</span>
+                </div>
+                <div class="cart-right">
+                    <span class="cart-items-count">0 Items</span>
+                    <span class="cart-divider">|</span>
+                    <span class="cart-total-price">Rp0</span>
+                </div>
+            </button>
+        </div>
+
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                <span>Menu</span>
+            </a>
+            <a href="#" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                <span>Orders</span>
+            </a>
+            <a href="#" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>Queue</span>
+            </a>
+            <a href="#" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="menu.js"></script>
+</body>
+</html>

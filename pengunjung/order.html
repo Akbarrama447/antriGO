@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntriGo - Your Cart</title>
+    <link rel="stylesheet" href="order.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <button class="back-btn" onclick="history.back()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+            <div class="header-logo">AntriGo</div>
+            <div class="profile-pic">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=36&h=36&fit=crop&crop=face" alt="Profile">
+            </div>
+        </header>
+
+        <div class="cart-content" id="cartContent">
+            <div class="empty-state" id="emptyState">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <p class="empty-text">Your cart is empty</p>
+                <button class="btn-browse" onclick="location.href='menu.html'">Browse Menu</button>
+            </div>
+            <div id="cartItems"></div>
+        </div>
+
+        <div id="orderSummary" style="display:none">
+            <div class="section-block">
+                <h2 class="section-label">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    KITCHEN NOTES
+                </h2>
+                <textarea class="notes-input" id="kitchenNote" placeholder="Any allergies or special requests?"></textarea>
+            </div>
+
+            <div class="section-block">
+                <h2 class="section-label">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                    PAYMENT METHOD
+                </h2>
+                <div class="payment-grid">
+                    <div class="payment-option" onclick="selectPayment(this, 'qris')">
+                        <svg class="pay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><path d="M14 14h3v3h-3zM14 19h7v2h-7zM19 14h2v5h-2z"></path></svg>
+                        <div class="pay-title">QRIS</div>
+                        <div class="pay-sub">Instant Pay</div>
+                    </div>
+                    <div class="payment-option" onclick="selectPayment(this, 'cash')">
+                        <svg class="pay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle></svg>
+                        <div class="pay-title">Cash</div>
+                        <div class="pay-sub">At Counter</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="qrisBox" class="qris-container" style="display:none">
+                <div class="qr-wrapper">
+                    <img src="" alt="QR Code" class="qr-img" id="qrCodeImg">
+                </div>
+                <h3 class="qr-title">Scan to Pay</h3>
+                <p class="qr-desc">Scan the QR code with your e-wallet to complete payment</p>
+            </div>
+
+            <div id="cashBox" class="qris-container" style="display:none">
+                <div class="qr-wrapper">
+                    <img src="" alt="Barcode" class="qr-img" id="barcodeImg">
+                </div>
+                <h3 class="qr-title">Show to Cashier</h3>
+                <p class="qr-desc">Present this barcode at the counter to pay with cash</p>
+            </div>
+
+            <div class="summary-box" id="summaryBox">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="billSubtotal">Rp0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (10%)</span>
+                    <span id="billTax">Rp0</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <span id="billTotal">Rp0</span>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app-footer" id="appFooter" style="display:none">
+            <button class="btn-place-order" id="placeOrderBtn" onclick="placeOrder()">
+                <span>Place Order</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
+        </footer>
+
+        <div class="modal-overlay" id="receiptModal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeReceipt()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="receipt" id="receiptContent"></div>
+                <button class="btn-done" id="doneBtn" onclick="closeReceipt()">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="order.js"></script>
+</body>
+</html>

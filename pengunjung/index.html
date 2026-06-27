@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antrigo - Select Order Type</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="order-card">
+        <div class="brand">ANTRIGO</div>
+        <h1 class="title">Select Order Type</h1>
+        
+        <button class="btn btn-dine-in" onclick="selectOrder('Dine-In')">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+            </svg>
+            <span class="btn-text">Dine-In</span>
+        </button>
+
+        <button class="btn btn-takeaway" onclick="selectOrder('Takeaway')">
+            <div class="btn-content-wrapper">
+                <div class="main-content">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 11h12l1 9H5z"></path>
+                        <path d="M9 11V6a3 3 0 0 1 6 0v5"></path>
+                    </svg>
+                    <span class="btn-text">Takeaway</span>
+                </div>
+                <span class="sub-text">Bypass table selection</span>
+            </div>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

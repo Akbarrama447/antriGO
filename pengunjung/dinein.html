@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antrigo - Table Recommendation</title>
+    <link rel="stylesheet" href="dinein.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <button class="back-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+            <div class="header-logo">
+                <svg class="fork-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+                </svg>
+                <span>AntriGo</span>
+            </div>
+            <div class="profile-pic">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face" alt="Profile">
+            </div>
+        </header>
+
+        <main class="main-content">
+            <h1 class="main-title">How many people?</h1>
+            <p class="subtitle">Choose your party size for the best table recommendation.</p>
+
+            <div class="people-selector">
+                <div class="num-box" onclick="selectPeople(this)">1</div>
+                <div class="num-box" onclick="selectPeople(this)">2</div>
+                <div class="num-box" onclick="selectPeople(this)">3</div>
+                <div class="num-box active" onclick="selectPeople(this)">4</div>
+                <div class="num-box" onclick="selectPeople(this)">5</div>
+            </div>
+
+            <div class="recommendation-card">
+                <div class="badge-top">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    TOP RECOMMENDATION
+                </div>
+                <h2 class="table-title">Table 12</h2>
+                <p class="table-desc">A cozy corner spot near the window, perfect for 4 people.</p>
+                <div class="rating-row">
+                    <span class="rating-badge">4.8</span>
+                    <span class="rating-text">Popular choice for families</span>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div class="map-layout">
+                    <div class="bg-table t-top-left"></div>
+                    <div class="bg-table t-top-right"></div>
+                    <div class="bg-table t-bottom-left"></div>
+                    <div class="bg-table t-bottom-right"></div>
+                    
+                    <div class="active-table-zone">
+                        <div class="active-table-box">
+                            <svg class="table-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3h18v4H3zM5 7v14M19 7v14"></path>
+                            </svg>
+                            <span>T12</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="floor-label">Level 1 - Main Dining Room</div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <button class="btn-view-menu">
+                <span>View Menu</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
+        </footer>
+    </div>
+
+    <script src="dinein.js"></script>
+</body>
+</html>
