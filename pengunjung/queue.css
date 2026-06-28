@@ -121,6 +121,20 @@ body {
     margin-top: 4px;
 }
 
+.order-type {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.order-type.takeaway {
+    color: #b45309;
+}
+
+.order-type.dine-in {
+    color: #006837;
+}
+
 .eat-type {
     color: #b45309;
     font-weight: 600;

@@ -21,6 +21,8 @@ function selectPeople(el) {
 }
 
 document.querySelector('.btn-view-menu').addEventListener('click', function () {
+    localStorage.setItem('orderType', 'dine-in');
+    localStorage.removeItem('customerName');
     window.location.href = 'menu.html';
 });
 

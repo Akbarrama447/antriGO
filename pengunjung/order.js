@@ -210,6 +210,8 @@ function placeOrder() {
     `;
 
     const statusMessages = ['Received', 'Preparing', 'Cooking', 'Ready', 'Completed'];
+    const orderType = localStorage.getItem('orderType') || 'dine-in';
+    const customerName = localStorage.getItem('customerName') || '';
     const orderData = {
         orderNumber: orderNumber,
         items: cart,
@@ -221,7 +223,9 @@ function placeOrder() {
         timestamp: dateStr,
         status: 1,
         statusLabel: statusMessages[0],
-        alertMessage: 'Your order has been received! We\'ll start cooking shortly.'
+        alertMessage: 'Your order has been received! We\'ll start cooking shortly.',
+        orderType: orderType,
+        customerName: customerName
     };
 
     localStorage.setItem('activeOrder', JSON.stringify(orderData));

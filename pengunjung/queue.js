@@ -37,6 +37,15 @@ function loadOrder() {
     document.getElementById('orderTime').innerHTML = `Ordered ${orderData.timestamp}`;
     document.getElementById('totalPrice').textContent = formatPrice(orderData.total);
 
+    const typeLabel = document.getElementById('orderTypeLabel');
+    if (orderData.orderType === 'takeaway') {
+        typeLabel.innerHTML = `Takeaway - Pickup by <strong>${orderData.customerName || 'Guest'}</strong>`;
+        typeLabel.className = 'order-type takeaway';
+    } else {
+        typeLabel.textContent = 'Dine-In';
+        typeLabel.className = 'order-type dine-in';
+    }
+
     const step = orderData.status || 1;
     updateStepper(step);
 

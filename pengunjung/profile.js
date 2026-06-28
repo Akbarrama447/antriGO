@@ -90,6 +90,8 @@ function clearData() {
         localStorage.removeItem('activeOrder');
         localStorage.removeItem('orderHistory');
         localStorage.removeItem('cart');
+        localStorage.removeItem('orderType');
+        localStorage.removeItem('customerName');
         loadProfile();
     }
 }
